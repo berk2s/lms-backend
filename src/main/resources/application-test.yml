@@ -1,0 +1,30 @@
+server:
+  address: 192.168.0.21
+  port: 8080
+
+
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:file:~/test
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+    show-sql: true
+
+authserver:
+  auth-config:
+    server-url: http://rocketteam.com
+    access-token:
+      lifetime: 10m
+    refresh-token:
+      lifetime: 8h
+    purging-refresh-tokens-cron: "* * 0/6 * * *"
+
+springdoc:
+  version: v1
+  api-docs:
+    path: /api-docs
